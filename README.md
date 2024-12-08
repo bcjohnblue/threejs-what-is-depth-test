@@ -4,7 +4,7 @@
 
 ## Techs
 
-- [threejs (v0.159.0)](https://threejs.org/)
+- [threejs (v0.171.0)](https://threejs.org/)
 - [vite](https://cn.vitejs.dev/guide/)
 - [lil-gui](https://lil-gui.georgealways.com/)
 
