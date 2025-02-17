@@ -10,7 +10,7 @@ export class Experience {
     // Setup
     this.scene = new THREE.Scene();
 
-    this.helpers = new Helpers(this);
+    // this.helpers = new Helpers(this);
     this.debug = new Debug(this);
 
     this.sizes = new Sizes();
