@@ -1,6 +1,8 @@
-# Three.js template
+# Three.js - What is depth testing ?
 
-#### [Online demo](https://codesandbox.io/p/devbox/github/bcjohnblue/threejs-template/tree/main/)
+#### [Article](https://bcjohnblue.github.io/blog/2025/02/13/three-js-中物體的遠近關係-1-什麼是深度測試？/)
+
+#### [Demo](https://codesandbox.io/p/github/bcjohnblue/threejs-what-is-depth-test/main)
 
 ## Techs
 

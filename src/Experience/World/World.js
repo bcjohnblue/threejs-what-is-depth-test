@@ -19,6 +19,13 @@ export class World {
     redPlaneDebug.add(this.redPlane.mesh, 'visible');
     redPlaneDebug.add(this.redPlane.mesh.position, 'z').min(-5).max(5).step(1);
     redPlaneDebug.add(this.redPlane.material, 'depthTest');
+    redPlaneDebug.add(this.redPlane.material, 'depthFunc', {
+      LessEqual: THREE.LessEqualDepth,
+      GreaterEqual: THREE.GreaterEqualDepth,
+      Always: THREE.AlwaysDepth,
+      Never: THREE.NeverDepth
+    });
+    redPlaneDebug.add(this.redPlane.material, 'depthWrite');
 
     this.bluePlane = new Plane(experience);
     this.bluePlane.mesh.position.z = -1;
@@ -27,20 +34,19 @@ export class World {
       'Blue Plane (second draw)'
     );
     bluePlaneDebug.add(this.bluePlane.mesh, 'visible');
-    bluePlaneDebug.add(this.bluePlane.mesh.position, 'z').min(-5).max(5).step(1);
+    bluePlaneDebug
+      .add(this.bluePlane.mesh.position, 'z')
+      .min(-5)
+      .max(5)
+      .step(1);
     bluePlaneDebug.add(this.bluePlane.material, 'depthTest');
-
-    this.experience.debug.gui
-      .add(globalDebugState, 'depthFunc', {
-        LessEqual: THREE.LessEqualDepth,
-        GreaterEqual: THREE.GreaterEqualDepth,
-        Always: THREE.AlwaysDepth,
-        Never: THREE.NeverDepth
-      })
-      .onChange((value) => {
-        this.redPlane.material.depthFunc = value;
-        this.bluePlane.material.depthFunc = value;
-      });
+    bluePlaneDebug.add(this.bluePlane.material, 'depthFunc', {
+      LessEqual: THREE.LessEqualDepth,
+      GreaterEqual: THREE.GreaterEqualDepth,
+      Always: THREE.AlwaysDepth,
+      Never: THREE.NeverDepth
+    });
+    bluePlaneDebug.add(this.bluePlane.material, 'depthWrite');
   }
 
   update(...arg) {
